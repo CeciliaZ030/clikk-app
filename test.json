@@ -1,0 +1,27 @@
+{
+  "user_story": "Look up a Clikk member's published card by handle, answer a contact question from it, and handle a handle with no public profile honestly. Read-only; needs CLIKK_API_KEY.",
+  "turns": [
+    {
+      "prompt": "Look up the Clikk profile for the handle derrick and show me what they published.",
+      "expected_tools": {
+        "must_call": ["get_clikk_profile"]
+      }
+    },
+    {
+      "prompt": "What is derrick's email address on Clikk?",
+      "expected_tools": {
+        "any_of": ["get_clikk_profile"]
+      }
+    },
+    {
+      "prompt": "Now check the Clikk handle zoey.",
+      "expected_tools": {
+        "must_call": ["get_clikk_profile"]
+      }
+    }
+  ],
+  "final_assertion": {
+    "no_errors": true,
+    "max_turns": 8
+  }
+}

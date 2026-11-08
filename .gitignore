@@ -1,0 +1,4 @@
+/target
+.env
+.env.*
+.aomi/deployment.json
